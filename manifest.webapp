@@ -1,0 +1,15 @@
+{ 
+	"version": "1.1",
+	"name": "IMC Peso Ideal", 
+	"description": "Calculadora de PI (Peso Ideal) e IMC (Indice de Masa Corporal). Controla tu peso fácilmente con tu dispositivo Firefox OS.", 
+	"launch_path": "/index.html", 
+	"developer": { "name": "Antonio Maturana", "url": "http://www.palasaka.com" }, 
+	"icons": { 
+		"60": "/img/icon60.png", 
+		"128": "/img/icon128.png" 
+	}, 
+	"installs_allowed_from": ["*"],
+	"default_locale": "es",
+	"fullscreen": "true",
+	"orientation": ["portrait-primary"]		
+}

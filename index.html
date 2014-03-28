@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html>
+	<head> 
+		<title>IMC Peso Ideal</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width" /> 
+		<link rel="stylesheet" href="css/jquery.mobile.pesoideal.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure.min.css" />
+		<link rel="stylesheet" href="css/app.css" />
+		<script src="js/jquery.min.js"></script> 
+		<script src="js/custom-init.js"></script> 
+		<script src="js/jquery.mobile.min.js"></script> 
+		<script src="js/app.js"></script> 
+	</head> 
+	
+	<body>
+		<!--******************************** INICIO ****************************************-->
+		<div data-role="page" id="inicio" data-theme="c">
+			
+			<div data-role="header"  data-id="header" data-theme="b">
+				<img class="cartel" align="center" src="css/images/header.png" />
+				   <a id="info" href="#" data-role="button" data-icon="info" data-iconpos="notext" class="ui-btn-right">Info</a>
+				</div>
+			
+			<div data-role="content">
+				<div style="text-align:center;">
+				<form>	
+					<ul data-role="listview" data-inset="true">
+						<li data-role="fieldcontain">
+							<label for="slider-altura">Estatura (cm)</label>
+							<input name="slider-altura" id="slider-altura" data-highlight="true" min="100" max="250" step="1" value="170" type="range">
+						</li>
+						<li data-role="fieldcontain">
+							<label for="slider-peso">Peso (kg)</label>
+							<input name="slider-peso" id="slider-peso" data-highlight="true" min="25" max="250" step="1" value="70" type="range">
+						</li>
+						<li data-role="fieldcontain">
+							<label for="sexo" class="select">Sexo</label>
+							<select name="sexo" id="sexo">
+							<option value="v">Hombre</option>
+							<option value="m">Mujer</option>
+							</select>
+						</li>
+						<li data-role="fieldcontain">
+							<button id="calcular" data-mini="false" data-theme="b">Calcular IMC y PI</button>
+						</li>
+					</ul>
+				</form>
+				</div>	
+			</div><!-- /content -->
+	
+		</div>
+		
+		<!--******************************** RESULTADO ****************************************-->
+		<div data-role="page" id="resultado" data-theme="c">
+			
+			<div data-role="header"  data-id="header" data-theme="b">
+					<img class="cartel" align="center" src="css/images/header_results.png" />
+			</div>
+			
+			<div id="top"></div>
+			<div data-role="content" data-theme="d">	
+			    <div class="container_resultado_1">
+						<img id="categoria_img" src=""/>
+						<span id="titulo_resultado"></span><br>
+						<span>Tu peso actual es considerado como</span><br>
+						<span id="categoria"></span></br>
+						<span>por la Sociedad Española para el Estudio de la Obesidad (SEEDO)</span><br>
+						<div style="clear:both;"></div>
+				</div>
+				<div class="container_resultado_2">
+						<span id="PI_label">Peso ideal</span>&nbsp; <span id="PI_value"> - </span> <span>kg</span>&nbsp;&nbsp;<span><a id="info_pi" href="#info_PI" data-rel="popup"  data-inline="true" data-transition="pop" data-theme="c" data-position-to="#top">+ìnfo</a></span>
+				</div>
+				
+						<!-- POPUP INFO PI -->
+						<div data-role="popup" id="info_PI" class="ui-content" data-theme="c" style="max-width:310px;">
+						  <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+						  <h3>Peso Ideal (PI)</h3>
+						  <p>Media de las siguientes fórmulas de cálculo del PI</p>
+						  <ul>
+							<li>PI Devine: <span id="pi_devine"></span>kg</li>
+							<li>PI Robinson: <span id="pi_robinson"></span>kg</li>
+							<li>PI Miller: <span id="pi_miller"></span>kg</li>
+							<lI>PI Hamwi: <span id="pi_hamwi"></span>kg</li>
+							<li>PI Lemmens: <span id="pi_lemmens"></span>kg</li>
+							<li><strong>PI Ideal: <span id="pi_ideal"></span>kg</strong></li>
+						  </ul>
+						</div>						
+				
+				<div class="container_resultado_2">
+						<span id="PIPorc_label">Porcentaje PI</span>&nbsp; <span id="PIPorc_value"> - </span> <span>%</span>&nbsp;&nbsp;<span><a id="info_piporc" href="#info_PIPorc" data-rel="popup" data-inline="true" data-transition="pop"  data-theme="c" data-position-to="#top">+ìnfo</a></span>
+				</div>
+	
+						<!-- POPUP INFO PIPorc-->
+						<div data-role="popup" id="info_PIPorc" class="ui-content" data-theme="c" style="max-width:310px;">
+						  <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+						  <h3>Porcentaje Peso Ideal (PI)</h3>
+						  <p>Es el porcentaje del peso ideal de tu peso actual:</p>
+						   <p style="font-size:16px;text-align:center;"><br><strong>(peso actual / peso ideal) * 100</strong></p>
+						</div>												
+				
+				<div class="container_resultado_2">
+						<span id="IMC_label">IMC</span>&nbsp; <span id="IMC_value"> - </span> <span>kg/m²</span>&nbsp;&nbsp;<span><a id="info_imc" href="#info_IMC" data-rel="popup"  data-transition="pop" data-inline="true" data-theme="c" data-position-to="#top">+ìnfo</a></span>
+				</div>	
+
+						<!-- POPUP INFO IMC-->
+						<div data-role="popup" id="info_IMC" class="ui-content" data-theme="c" style="max-width:310px;">
+						  <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+						  <h3>Indice de Masa Corporal (IMC)</h3>
+						  <p>El IMC se calcula mediante la siguiente formula:</p>
+						  <p style="font-size:16px;text-align:center;"><br><strong>peso(kg) / estatura2(metros)</strong></p>
+						</div>													
+													
+			</div><!-- /content -->
+			
+			<div data-role="footer"  data-id="footer" data-position="fixed" data-theme="c">
+				<div style="padding:2px 10px;"><a id="aceptar" href="#inicio" data-role="button" data-mini="false" data-transition="slidedown" data-direction="reverse">Aceptar</a></div>
+			</div>
+
+		</div><!-- /page -->
+
+		<!--******************************** INFO ****************************************-->
+		<div data-role="page" id="info" data-theme="c">			
+			<div data-role="header"  data-id="header" data-position="fixed" data-theme="b">
+				<h1>Info</h1>
+			</div>
+
+			<div data-role="content" >
+                <h3>IMC Peso Ideal for Firefox OS</h3>
+				<h5>Calculadora de peso ideal y IMC (Indice de Masa Corporal)</h5>
+				<h4>Versión 1.1</h4>
+				
+				<p>Con <strong>IMC Peso Ideal</strong> podrás calcular cual es tu peso ideal, en base a tu estatura, tu peso actual. También podrás calcular tu IMC (Indice de Masa Corporal) y así sabrás si te sobran kilos, o te faltan, siempre en base a los criterios de la Sociedad Española para el Estudio de la Obesidad (SEEDO)</p>
+				
+				<h4>Indice de Masa Corporal</h4>
+                <p>La masa es aquella magnitud física que nos permite indicar la cantidad de materia que contiene un cuerpo, en tanto, la unidad de masa en el Sistema Internacional de Unidades y Medidas es el kilogramo o kg.</p>
+				<p>Y el término corporal nos permite designar a todo aquello perteneciente o vinculado a nuestro cuerpo.</p>
+				<p>Entonces, la masa corporal es un concepto que se emplea para designar la cantidad de materia presente en un cuerpo humano y se encuentra en estrecha vinculación al Indice de Masa Corporal (IMC) el cual consiste en la asociación  del peso y la altura de la persona en cuestión, para conocer si la relación que se establece entre ambos es saludable.</p>
+				<p>Cabe destacar, que el peso en sí mismo no representa un dato relevante para conocer si el estado de salud de una persona es óptimo, es decir, dos personas pueden pesar lo mismo y no obstante, puede contener un estado físico y atlético muy bueno, mientras que la otra puede padecer de obesidad, porque un peso de por ejemplo 80 kg. será normal en aquel que mide 1,90 m., pero por el contrario, será excesivo en quien mide 1,60 m.</p>
+				<p>El IMC, o también denominado índice de Quételet, fue creado en el siglo XIX por el estadístico, naturalista y sociólogo belga L.A.J.Quételet y se puede calcular dividiendo el peso en kilogramos por la altura al cuadrado, en centímetros. Una vez obtenido, es preciso consultar en la tabla correspondiente  para conocer si el IMC resultante implica un peso saludable o si nos indica la presencia de sobrepeso que deberá sí o sí ser corregido para mantener una vida saludable.</p>
+                				
+			</div><!-- /content -->
+			
+			<div data-role="footer"  data-id="footer" data-position="fixed" data-theme="b">
+			    <div style="padding:2px 10px;"><button id="aceptar_info" data-mini="false">Aceptar</button></div>
+			</div>
+			
+		</div><!-- /page -->	
+	
+	</body>
+</html>

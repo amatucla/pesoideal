@@ -1,0 +1,80 @@
+.container_resultado_1 {
+    background-color:#fff;
+	font-size:12px;
+}
+
+.container_resultado_2 {
+	padding:5px;
+	text-align:center; 
+	background-color:#DDD;
+	border-top: 1px solid #FFF;
+	font-size:12px;
+}
+
+.container_resultado_3 {
+	padding:5px;text-align:center; border-top: 1px solid #FFF
+}
+
+#PI_value {
+   font-size:28px; 
+   font-style:italic;
+   font-weight:bold;
+   color: #666;
+}
+
+#PIPorc_value {
+   font-size:28px; 
+   font-style:italic;
+   font-weight:bold;
+   color: #666;
+}
+
+#IMC_value {
+   font-size:28px;  
+   font-style:italic;
+   font-weight:bold;
+   color: #666;
+}
+
+a#info_imc, a#info_piporc, a#info_pi {
+   font-size:16px;  
+   text-decoration: none;
+   /* font-weight: normal; */
+}
+
+img#categoria_img{
+	float:left;
+	margin-right:4px;
+}
+
+span#titulo_resultado {
+    font-size:20px;
+	font-weight: bold;
+	color: RED;
+}
+
+span#titulo_resultado.ok {
+	color: #5393C5;
+}
+
+span#categoria {
+    font-size:18px;
+	color: RED;
+}
+
+span#categoria.ok {
+   color:#5393C5;
+}
+
+
+img.cartel {
+	max-height: 50px;
+	margin: auto;
+	display: block;
+}
+
+
+div#info_PI h3, div#info_PIPorc h3, div#info_IMC h3 {
+	color:#2489CE;
+}
+
