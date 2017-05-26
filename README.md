@@ -17,4 +17,4 @@ Controla tu peso y mejora tu vida con IMC Peso Ideal.
 
 ## Demo
 
-http://imc-peso-ideal.palasaka.net/
+http://imc-peso-ideal.palasaka.net
