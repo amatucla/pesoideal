@@ -6,7 +6,7 @@ Con IMC Peso Ideal podrás calcular cual es tu peso ideal, en base a tu estatura
 Controla tu peso y mejora tu vida con IMC Peso Ideal. 
 
 
-# Características
+## Características
 
    - Calculo del Peso Ideal (PI).
    - Porcentaje del Peso Ideal del Peso Actual.
