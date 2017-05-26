@@ -15,4 +15,6 @@ Controla tu peso y mejora tu vida con IMC Peso Ideal.
    - Aplicación ligera y funcional.
 
 
-http://www.palasaka.com/apps/2324-imc-peso-ideal
+## Demo
+
+http://imc-peso-ideal.palasaka.net/
